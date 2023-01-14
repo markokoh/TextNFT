@@ -1,10 +1,22 @@
 const functions = require("firebase-functions");
 
-// // Create and deploy your first functions
-// // https://firebase.google.com/docs/functions/get-started
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+const admin = require("firebase-admin");
+admin.initializeApp();
+const db = admin.firestore();
 
+const getSelection = async (num) => {
+  console.log("Art selected:", num);
+  try {
+    const frameRef = db.collection("shows").doc("gallery");
+    await frameRef.set({
+      frame: parseFloat(num),
+    });
+  } catch (err) {
+    console.log("Error adding vote: ", err);
+  }
+};
+
+exports.selectArt = functions.https.onRequest((req, res) => {
+  getSelection(req.body.Body);
+  res.end();
+});

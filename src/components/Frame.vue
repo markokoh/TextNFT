@@ -1,14 +1,14 @@
 <template>
   <div class="center-image">
-    <button @click="getImage(1)">get image</button>
     <img :src="imageUrl" :alt="imageAlt" ref="image" />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { useStorage } from "../composables/useStorage";
 // import { db } from "../firebase/config";
+import { db } from "../firebase/config";
+import { doc, onSnapshot } from "firebase/firestore";
 
 const imageUrl = ref("");
 
@@ -35,6 +35,13 @@ const getImage = (num) => {
       console.log("No match");
   }
 };
+
+onSnapshot(doc(db, "shows", "gallery"), (doc) => {
+  const { frame } = doc.data();
+  console.log("Frame", frame);
+
+  getImage(frame);
+});
 </script>
 
 <style>
@@ -42,6 +49,9 @@ const getImage = (num) => {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+img {
   height: 100vh;
 }
 </style>

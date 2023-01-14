@@ -27,8 +27,7 @@ coverage
 *.sln
 *.sw?
 
-firebase/TestIgnore2.js
-TestIgnore1
-TestIgnore3.js
+src/firebase/config.js
+
 
 
