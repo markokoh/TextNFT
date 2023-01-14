@@ -7,12 +7,13 @@
 
 <script setup>
 import { ref } from "vue";
+import { useStorage } from "../composables/useStorage";
+// import { db } from "../firebase/config";
 
 const imageUrl = ref("");
 
 const image1 =
-  "https://firebasestorage.googleapis.com/v0/b/textvote-7a52e.appspot.com/o/JasperArt_2022-09-04_15.06.35_3.png?alt=media&token=0915911d-c3e7-42b2-b522-be4a5f85ee68";
-
+  "https://firebasestorage.googleapis.com/v0/b/textvote-7a52e.appspot.com/o/images%2FJasperArt_2022-09-04_16.10.11_1.png?alt=media&token=3fc2f3f0-dd36-4d9f-a201-4f60541bcf0a";
 const image2 =
   "https://firebasestorage.googleapis.com/v0/b/textvote-7a52e.appspot.com/o/JasperArt_2022-09-04_16.16.22_2.png?alt=media&token=0c11e0c5-9bed-4b0a-87b0-a3df21865007";
 
