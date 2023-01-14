@@ -1,16 +1,18 @@
 <template>
-  <div class="center-image">
+  <div class="center-image" @do-stuff="getImage(2)">
     <img :src="imageUrl" :alt="imageAlt" ref="image" />
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watchEffect, onMounted } from "vue";
 import { db } from "../firebase/config";
 import { doc, onSnapshot } from "firebase/firestore";
+import { useArt } from "../composables/useArt.js";
 import nfts from "../data/nfts.json";
 
 const imageUrl = ref("");
+const artSelected = ref(useArt());
 
 const getImage = (num) => {
   switch (num) {
@@ -30,13 +32,12 @@ const getImage = (num) => {
 
 onSnapshot(doc(db, "shows", "gallery"), (doc) => {
   const { frame } = doc.data();
-  console.log("Frame", frame);
 
   getImage(frame);
 });
 </script>
 
-<style>
+<style scoped>
 .center-image {
   display: flex;
   justify-content: center;
