@@ -9,10 +9,20 @@
 <script setup>
 import { ref } from "vue";
 import nfts from "../data/nfts.json";
+import { db } from "../firebase/config";
+import { doc, onSnapshot } from "firebase/firestore";
 
-const title = ref(nfts.image1.name);
-const imageUrl = ref(nfts.image1.URL);
+const title = ref("");
+const imageUrl = ref("");
 const description = ref(nfts.image1.description);
+
+onSnapshot(doc(db, "shows", "gallery"), (doc) => {
+  const { frame } = doc.data();
+  const art = Object.values(nfts)[frame - 1];
+  title.value = art.name;
+  imageUrl.value = art.URL;
+  description.value = art.description;
+});
 </script>
 
 <style>

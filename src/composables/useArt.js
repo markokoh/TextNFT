@@ -1,7 +1,9 @@
 import { db } from "../firebase/config";
 import { doc, onSnapshot } from "firebase/firestore";
 
-export function useArt (somefuction){
+
+
+export function useArt (){
     
     onSnapshot(doc(db, "shows", "gallery"), (doc) => {
         const { frame } = doc.data();
