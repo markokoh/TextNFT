@@ -6,6 +6,8 @@ const admin = require("firebase-admin");
 admin.initializeApp();
 const db = admin.firestore();
 
+
+
 // const sendTextMessage = () => {
 //   console.log(
 //       // "sendTextMessage",
@@ -14,43 +16,29 @@ const db = admin.firestore();
 //   );
 // };
 
-const sendTextMessage = (bodyText) => {
-  const consumer = new RelayConsumer({
+const sendTextMessage = async (bodyText) => {
+  console.log("signalWireProject", signalWireProject);
+  console.log("signalWireToken", signalWireToken);
+  console.log("bodyText", bodyText);
 
+  const client = new RelayClient({
     project: signalWireProject,
-    token: signalWireToken,
-    contexts: ["default"],
-    ready: async ({client}) => {
-      const params = {
-
-        context: "+default",
-        from: +12232428478,
-        to: +13235297141,
-        body: bodyText,
-        tags: ["TextNFT"],
-
-      };
-
-      const {successful, messageId} = await client.messaging.send(params);
-
-      if (successful) {
-        console.log("Message send 'succesful'. Details - " +
-                          "From: +12232428478 " +
-                          ", To: +13235297141 " +
-                          ", Message: " + bodyText +
-                          ", SignalWire Message ID: " + messageId);
-
-        // what happens on'successful' differs depending when/where it is called
-        // return onSuccessful
-      } else {
-        console.log("Message not sent. +12232428478" + ", id" + messageId );
-        return;
-      }
-    },
-
+    token: signalWireProject,
   });
 
-  consumer.run();
+  const sendResult = await client.messaging.send({
+    context: "office",
+    from: "+12232428478",
+    to: "+13235297141",
+    body: bodyText,
+  });
+
+  if (sendResult.successful) {
+    console.log("Message ID: ", sendResult.messageId);
+  }
+
+
+  sendTextMessage().catch(console.error);
 };
 
 const getSelection = async (num) => {
