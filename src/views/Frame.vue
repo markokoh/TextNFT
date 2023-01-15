@@ -1,5 +1,5 @@
 <template>
-  <div class="center-image" @do-stuff="getImage(2)">
+  <div class="center-image">
     <img :src="imageUrl" />
   </div>
 </template>
