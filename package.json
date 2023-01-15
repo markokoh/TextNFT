@@ -9,9 +9,14 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@signalwire/compatibility-api": "^3.0.3",
+    "@signalwire/node": "^2.5.1",
+    "@signalwire/realtime-api": "^3.6.0",
     "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3",
     "firebase": "^9.15.0",
+    "firebase-admin": "^11.4.1",
+    "firebase-functions": "^4.1.1",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
