@@ -9,6 +9,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@signalwire/realtime-api": "^3.6.0",
     "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3",
     "firebase": "^9.15.0",
@@ -16,10 +17,12 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/eslint-parser": "^7.19.1",
     "@rushstack/eslint-patch": "^1.1.4",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-prettier": "^7.0.0",
-    "eslint": "^8.22.0",
+    "eslint": "^8.32.0",
     "eslint-plugin-vue": "^9.3.0",
     "prettier": "^2.7.1",
     "vite": "^4.0.0"
