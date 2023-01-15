@@ -7,11 +7,11 @@ const storage = getStorage();
 const storageRef = ref(storage);
 
 // Points to 'images'
-const imagesRef = ref(storageRef, 'images');
+const imagesRef = ref(storageRef, "images");
 
 // Points to 'images/space.jpg'
 // Note that you can use variables to create child values
-const fileName = 'JasperArt_2022-09-04_16.10.11_1.png';
+const fileName = "JasperArt_2022-09-04_16.10.11_1.png";
 const spaceRef = ref(imagesRef, fileName);
 
 // File path is 'images/space.jpg'
@@ -23,9 +23,8 @@ const name = spaceRef.name;
 // Points to 'images'
 const imagesRefAgain = spaceRef.parent;
 
-export function useStorage () {
+export function useStorage() {
+  console.log("Path", path);
 
-    console.log("Path", path)
-
-    return { useStorage }
+  return { useStorage };
 }

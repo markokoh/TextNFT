@@ -28,6 +28,7 @@ coverage
 *.sw?
 
 src/firebase/config.js
+# .env
 
 
 
