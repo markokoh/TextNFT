@@ -14,43 +14,20 @@ const db = admin.firestore();
 //   );
 // };
 
-const sendTextMessage = (bodyText) => {
-  const consumer = new RelayConsumer({
 
-    project: signalWireProject,
-    token: signalWireToken,
-    contexts: ["default"],
-    ready: async ({client}) => {
-      const params = {
+const client = new Messaging.Client({
+  project: signalWireProject,
+  token: signalWireToken,
+  contexts: ["office"],
+});
 
-        context: "+default",
-        from: +12232428478,
-        to: +13235297141,
-        body: bodyText,
-        tags: ["TextNFT"],
-
-      };
-
-      const {successful, messageId} = await client.messaging.send(params);
-
-      if (successful) {
-        console.log("Message send 'succesful'. Details - " +
-                          "From: +12232428478 " +
-                          ", To: +13235297141 " +
-                          ", Message: " + bodyText +
-                          ", SignalWire Message ID: " + messageId);
-
-        // what happens on'successful' differs depending when/where it is called
-        // return onSuccessful
-      } else {
-        console.log("Message not sent. +12232428478" + ", id" + messageId );
-        return;
-      }
-    },
-
+const sendTextMessage = async (message) => {
+  await client.send({
+    context: "office",
+    from: "+12232428478",
+    to: "+13235297141",
+    body: message,
   });
-
-  consumer.run();
 };
 
 const getSelection = async (num) => {

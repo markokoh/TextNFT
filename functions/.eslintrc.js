@@ -9,12 +9,18 @@ module.exports = {
     "google",
   ],
   rules: {
-    quotes: ["error", "double"],
+    "quotes": ["error", "double"],
+    "import/no-unresolved": "error",
   },
 
   parserOptions: {
     parser: "babel-eslint",
     ecmaVersion: 8,
+    sourceType: "module",
   },
+
+  plugins: [
+    "import",
+  ],
 
 };
