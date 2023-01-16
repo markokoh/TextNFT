@@ -1,26 +1,26 @@
 
 const functions = require("firebase-functions");
 const {Messaging} = require("@signalwire/realtime-api");
-
 const admin = require("firebase-admin");
 admin.initializeApp();
 const db = admin.firestore();
-
-
-
+require("dotenv").config();
 const nfts = require("./data/nfts.json");
 
 
-const sendTextMessage = async (body, TO_NUMBER) => {
+const sendTextMessage = async (body, toNumber) => {
+  console.log("process.env.PROJECT_ID", process.env.PROJECT_ID);
+  console.log("process.env.API_TOKEN", process.env.API_TOKEN);
+
+
   const nft = Object.values(nfts)[parseFloat(body) - 1];
 
   const nftTextMessage = nft.name + "\n" + "\n" +
   nft.description + "\n" + "\n" + nft.price;
 
   const client = new Messaging.Client({
-    project: PROJECT_ID,
-    token: API_TOKEN,
-    contexts: ["office"],
+    project: process.env.PROJECT_ID,
+    token: process.env.API_TOKEN,
   });
 
   client.on("message.received", (message) => {
@@ -28,16 +28,14 @@ const sendTextMessage = async (body, TO_NUMBER) => {
   });
 
   await client.send({
-    context: "office",
-    from: FROM_NUMBER,
-    to: TO_NUMBER,
+    from: "+18333333545",
+    to: toNumber,
     body: nftTextMessage,
     media: [nft.URL],
   });
 };
 
 const getSelection = async (num) => {
-  console.log("Art selected:", num);
   try {
     const frameRef = db.collection("shows").doc("gallery");
     await frameRef.set({

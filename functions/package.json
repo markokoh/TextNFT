@@ -15,6 +15,7 @@
   "main": "index.js",
   "dependencies": {
     "@signalwire/realtime-api": "^3.6.0",
+    "dotenv": "^16.0.3",
     "firebase-admin": "^11.4.1",
     "firebase-functions": "^4.1.1"
   },
