@@ -6,33 +6,29 @@ admin.initializeApp();
 const db = admin.firestore();
 require("dotenv").config();
 const nfts = require("./data/nfts.json");
+const fromNumber = process.env.FROM_NUMBER;
 
 
 const sendTextMessage = async (body, toNumber) => {
-  console.log("process.env.PROJECT_ID", process.env.PROJECT_ID);
-  console.log("process.env.API_TOKEN", process.env.API_TOKEN);
+  try {
+    const nft = Object.values(nfts)[parseFloat(body) - 1];
+    const nftTextMessage = nft.name + "\n" + "\n" +
+    nft.description + "\n" + "\n" + nft.price;
 
+    const client = new Messaging.Client({
+      project: process.env.PROJECT_ID,
+      token: process.env.API_TOKEN,
+    });
 
-  const nft = Object.values(nfts)[parseFloat(body) - 1];
-
-  const nftTextMessage = nft.name + "\n" + "\n" +
-  nft.description + "\n" + "\n" + nft.price;
-
-  const client = new Messaging.Client({
-    project: process.env.PROJECT_ID,
-    token: process.env.API_TOKEN,
-  });
-
-  client.on("message.received", (message) => {
-    console.log("message.received", message);
-  });
-
-  await client.send({
-    from: "+18333333545",
-    to: toNumber,
-    body: nftTextMessage,
-    media: [nft.URL],
-  });
+    await client.send({
+      from: fromNumber,
+      to: toNumber,
+      body: nftTextMessage,
+      media: [nft.URL],
+    });
+  } catch (err) {
+    console.log("Error sending text: ", err);
+  }
 };
 
 const getSelection = async (num) => {
