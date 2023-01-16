@@ -8,9 +8,15 @@ const db = admin.firestore();
 
 
 
+const nfts = require("./data/nfts.json");
 
-const sendTextMessage = async () => {
-  console.log("sendTextMessage");
+
+const sendTextMessage = async (body, TO_NUMBER) => {
+  const nft = Object.values(nfts)[parseFloat(body) - 1];
+
+  const nftTextMessage = nft.name + "\n" + "\n" +
+  nft.description + "\n" + "\n" + nft.price;
+
   const client = new Messaging.Client({
     project: PROJECT_ID,
     token: API_TOKEN,
@@ -25,7 +31,8 @@ const sendTextMessage = async () => {
     context: "office",
     from: FROM_NUMBER,
     to: TO_NUMBER,
-    body: "Hello World Mark!!!",
+    body: nftTextMessage,
+    media: [nft.URL],
   });
 };
 
@@ -41,8 +48,11 @@ const getSelection = async (num) => {
   }
 };
 
+
 exports.selectArt = functions.https.onRequest((req, res) => {
-  getSelection(req.body.Body);
-  sendTextMessage();
+  const messageBody = req.body.Body;
+  const from = req.body.From;
+  getSelection(messageBody);
+  sendTextMessage(messageBody, from);
   res.end();
 });
