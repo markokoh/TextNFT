@@ -13,7 +13,10 @@ const sendTextMessage = async (body, toNumber) => {
   try {
     const nft = Object.values(nfts)[parseFloat(body) - 1];
     const nftTextMessage = nft.name + "\n" + "\n" +
-    nft.description + "\n" + "\n" + nft.price;
+    nft.description + "\n" + "\n" + nft.price + "\n" + "\n" +
+
+    "https://www.w3schools.com/html/default.asp"
+    ;
 
     const client = new Messaging.Client({
       project: process.env.PROJECT_ID,
