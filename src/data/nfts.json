@@ -45,8 +45,55 @@
         "description": "Egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam. Fusce id velit ut tortor pretium viverra suspendisse potenti nullam. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Orci sagittis eu volutpat odio facilisis mauris sit amet. Erat velit scelerisque in dictum non consectetur a erat nam. Duis ut diam quam nulla porttitor massa id neque.",
         "price" : "1.7 ETH" 
 
-    }
+    },
+    
+    "image7" : {
+        "name": "Giant Samurai Bots",
+        "URL":   "https://firebasestorage.googleapis.com/v0/b/textvote-7a52e.appspot.com/o/images%2FJasperArt_2022-09-05_07.30.57_2.png?alt=media&token=489d2c90-a943-4a17-872f-cb9f7c36eb10",
+        "description": "Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Nec ultrices dui sapien eget mi proin. Velit egestas dui id ornare arcu. Nulla at volutpat diam ut venenatis tellus. Blandit turpis cursus in hac habitasse platea dictumst quisque sagittis.",
+        "price" : "1.9 ETH" 
 
+    },
+    
+    "image8" : {
+        "name": "Bobby",
+        "URL":   "https://firebasestorage.googleapis.com/v0/b/textvote-7a52e.appspot.com/o/images%2FJasperArt_2022-09-06_23.13.38_1.png?alt=media&token=ae55e71c-9af3-484d-b795-0073d58bc7f2",
+        "description": "Egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam. Fusce id velit ut tortor pretium viverra suspendisse potenti nullam. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Orci sagittis eu volutpat odio facilisis mauris sit amet. Erat velit scelerisque in dictum non consectetur a erat nam. Duis ut diam quam nulla porttitor massa id neque.",
+        "price" : "1.7 ETH" 
+
+    },
+    
+    "image9" : {
+        "name": "Old Lady In Sunglasses",
+        "URL":   "https://firebasestorage.googleapis.com/v0/b/textvote-7a52e.appspot.com/o/images%2FJasperArt_2022-09-13_23.39.05_2.png?alt=media&token=a62deb35-4ce0-4125-914f-e3bebff8ca4b",
+        "description": "Egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam. Fusce id velit ut tortor pretium viverra suspendisse potenti nullam. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Orci sagittis eu volutpat odio facilisis mauris sit amet. Erat velit scelerisque in dictum non consectetur a erat nam. Duis ut diam quam nulla porttitor massa id neque.",
+        "price" : "2.5 ETH" 
+
+    },
+    
+    "image10" : {
+        "name": "Old Lady With Headphones",
+        "URL":   "https://firebasestorage.googleapis.com/v0/b/textvote-7a52e.appspot.com/o/images%2FJasperArt_2022-09-15_15.35.50_4.png?alt=media&token=0b85073d-13aa-4e0c-810a-d8a58475828f",
+        "description": "Egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam. Fusce id velit ut tortor pretium viverra suspendisse potenti nullam. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Orci sagittis eu volutpat odio facilisis mauris sit amet. Erat velit scelerisque in dictum non consectetur a erat nam. Duis ut diam quam nulla porttitor massa id neque.",
+        "price" : "1.9 ETH" 
+
+    },
+    
+    "image11" : {
+        "name": "Glow",
+        "URL":   "https://firebasestorage.googleapis.com/v0/b/textvote-7a52e.appspot.com/o/images%2FJasperArt_2022-09-16_00.04.46_3.png?alt=media&token=47039dd9-ca64-4207-a1ba-ee849471cbb3",
+        "description": "Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Feugiat scelerisque varius morbi enim. Amet consectetur adipiscing elit ut. Sed id semper risus in hendrerit gravida rutrum. ",
+        "price" : "1.4 ETH" 
+
+    },
+    
+    "image12" : {
+        "name": "Gadgets",
+        "URL":   "https://firebasestorage.googleapis.com/v0/b/textvote-7a52e.appspot.com/o/images%2FJasperArt_2022-09-04_20.32.01_4.png?alt=media&token=1d181600-f53f-436f-9a57-e8056e63dde0",
+        "description": "Velit laoreet id donec ultrices. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Id faucibus nisl tincidunt eget. Dui vivamus arcu felis bibendum.",
+        "price" : "1.6 ETH" 
+
+    }
 
 
     
