@@ -8,13 +8,13 @@ It uses Firebase for the backend, SignalWire for SMS, and Vue.js for the front e
 
 # How to use:
 
-Text a number from 1 - 6 to the number bellow, to change the NFT on screen. You will receive a reply with a description and link (the price and the buy button are not real).
+Text a number from 1 - 6 to the phone number bellow, to change the NFT on screen. You will receive a reply with a description and link (the price and the buy button are not real).
 
 Tel: +1 (833) 333-3545
 
 **Video Demo:**
 
-https://firebasestorage.googleapis.com/v0/b/textvote-7a52e.appspot.com/o/images%2FTextNFT_Vid.mp4?alt=media&token=1e96710c-9b60-4cdf-8a99-404a4d561d55
+https://firebasestorage.googleapis.com/v0/b/textvote-7a52e.appspot.com/o/images%2FTEXT%20NFT%20VID.mp4?alt=media&token=628d3142-83ab-40bb-b487-f0cd8680278a
 
 **Demo Site:**
 
