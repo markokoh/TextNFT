@@ -13,9 +13,9 @@ const sendTextMessage = async (body, toNumber) => {
   try {
     const nft = Object.values(nfts)[parseFloat(body) - 1];
     const nftTextMessage = nft.name + "\n" + "\n" +
-    nft.description + "\n" + "\n" + nft.price + "\n" + "\n" +
+    nft.description + "\n" + "\n" +
 
-    "https://www.w3schools.com/html/default.asp"
+    "https://textnft-c54c9.web.app/details"
     ;
 
     const client = new Messaging.Client({
